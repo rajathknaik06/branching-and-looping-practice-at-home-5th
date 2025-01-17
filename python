@@ -1,0 +1,49 @@
+""" John, a software developer, is analyzing a sequence of numbers within a given range to calculate their digit sum. However, to simplify his task, he excludes all numbers that are palindromes (numbers that read the same backward as forward). 
+
+
+
+Help John find the total sum of the digits of non-palindromic numbers in the range [start, end] (both inclusive).
+
+
+
+Example:﻿
+
+Input:
+
+10
+
+20
+
+
+
+Output:
+
+55
+
+
+
+Explanation:
+
+Range [10, 20]: Non-palindromic numbers are 10, 12, 13, 14, 15, 16, 17, 18, and 20.
+
+Digit sums: 1+0 + 1+2 + 1+3 + 1+4 + 1+5 + 1+6 + 1+7 + 1+8 + 2+0 = 55.
+
+Output: 55
+
+Input format :
+The first line of input consists of an integer, representing the starting number of the range.
+
+The second line of input consists of an integer, representing the ending number of the range.
+
+Output format :
+The output prints a single integer, representing the total sum of the digits of all non-palindromic numbers in the range."""
+
+
+start = int(input())
+end = int(input())
+total_sum = 0
+for num in range(start, end + 1):
+    if str(num) == str(num)[::-1]:
+        continue  
+    total_sum += sum(int(digit) for digit in str(num))
+print(total_sum)
